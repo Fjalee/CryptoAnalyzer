@@ -17,6 +17,8 @@ Web scraper that scrapes block explorers. This scraper can scrape:
 ### OS
 * Version for 64-bit Windows: windows_x64_executable/CryptoAnalyzer.exe
 * Version for 64-bit Linux: linux_x64_executable/CryptoAnalyzer
+### TIPS
+* If you view csv files with microsoft excel make sure that windows region format settings is set to US (winKey + S > type 'Regional Setting' > 'Regional format')
    
 Some software that open csv files may lock output's csv file from being changed by the scraper. If this occurs while scraping the scraper will continue scraping, however the new data will only be added to the file only after it is closed.
 
