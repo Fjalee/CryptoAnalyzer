@@ -60,8 +60,8 @@ namespace WebScraper.Parsers
 
                 row.TxnDate = ParseDate(rowHtml);
                 row.Action = ParseAction(rowHtml);
-                row.SellerHash = txnDetails?.From ?? "";
-                row.BuyerHash = txnDetails?.To ?? "";
+                row.ToHash = txnDetails?.From ?? "";
+                row.FromHash = txnDetails?.To ?? "";
             }
             catch(Exception e)
             {
