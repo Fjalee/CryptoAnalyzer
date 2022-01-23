@@ -28,7 +28,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <None Update="apikeys.json">
+    <None Update="local-appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -61,7 +61,7 @@ namespace WalletAnalyzer
         private static IConfiguration SetupConfiguration()
         {
             return new ConfigurationBuilder()
-                .AddJsonFile($"apikeys.json", false)
+                .AddJsonFile($"local-appsettings.json", false)
                 .AddJsonFile($"appsettings.json", false)
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .Build();
