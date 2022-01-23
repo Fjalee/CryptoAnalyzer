@@ -100,7 +100,7 @@ namespace WalletAnalyzer
 
             try
             {
-                var outputTable = _mapper.Map<DexTableCsvOutputDto>(_tableToOutput);
+                var outputTable = _mapper.Map<DexTableOutputDto>(_tableToOutput);
                 _dexOutput.DoOutput(outputName, tokenHash, outputTable, timeOutput, _totalRowsScraped);
                 _msWorthOfDataOutputed = _stopwatch.ElapsedMilliseconds;
 

@@ -19,7 +19,7 @@ namespace WalletAnalyzer
             _config = config.Value;
         }
 
-        public void DoOutput(string outputName, string tokenHash, DexTableCsvOutputDto table, string timeElapsed, int nmRows)
+        public void DoOutput(string outputName, string tokenHash, DexTableOutputDto table, string timeElapsed, int nmRows)
         {
             var pathName = _config.Path;
             var fullPath = pathName + '/' + outputName + ".csv";

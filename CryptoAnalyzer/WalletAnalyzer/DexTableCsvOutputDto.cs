@@ -2,9 +2,9 @@
 
 namespace WalletAnalyzer
 {
-    public class DexTableCsvOutputDto
+    public class DexTableOutputDto
     {
         public string TokenName { get; set; }
-        public List<DexRowCsvOutputDto> Rows { get; set; }
+        public List<DexRowOutputDto> Rows { get; set; }
     }
 }

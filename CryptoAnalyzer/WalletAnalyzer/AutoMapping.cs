@@ -7,8 +7,8 @@ namespace WalletAnalyzer
     {
         public AutoMapping()
         {
-            CreateMap<DexRow, DexRowCsvOutputDto>();
-            CreateMap<DexTable, DexTableCsvOutputDto>();
+            CreateMap<DexRow, DexRowOutputDto>();
+            CreateMap<DexTable, DexTableOutputDto>();
         }
     }
 }

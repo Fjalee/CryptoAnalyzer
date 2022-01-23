@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace WalletAnalyzer
 {
-    public class DexRowOutputDtoMap : ClassMap<DexRowCsvOutputDto>
+    public class DexRowOutputDtoMap : ClassMap<DexRowOutputDto>
     {
         public DexRowOutputDtoMap()
         {
