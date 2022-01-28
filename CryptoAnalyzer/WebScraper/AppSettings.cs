@@ -50,7 +50,7 @@
         public string Path { get; set; }
         public string LogPath { get; set; }
         public int AppendPeriodInSeconds { get; set; }
-        public string DateFormat { get; set; }
+        public string DateFormatForXlsx { get; set; }
         public int IndexFirstRowDexTable { get; set; }
     }
 }

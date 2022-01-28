@@ -19,7 +19,7 @@ namespace WalletAnalyzer
         public DexGoogleSheetsOutput(IOptions<OutputOptions> config)
         {
             _config = config.Value;
-            _dateFormatString = _config.DateFormat;
+            _dateFormatString = _config.DateFormatForXlsx;
             _indexFirstRowForDexTable = _config.IndexFirstRowDexTable;
         }
 
