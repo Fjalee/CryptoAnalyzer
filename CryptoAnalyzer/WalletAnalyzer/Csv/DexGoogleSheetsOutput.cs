@@ -13,7 +13,7 @@ namespace WalletAnalyzer
         private readonly OutputOptions _config;
         private ICellStyle _dateFormatStyle;
         private readonly string _dateFormatString = "dd/MM/yyyy HH:mm:ss";
-        private readonly int _indexFirstRowForDexTable = 4;
+        private readonly int _indexFirstRowForDexTable = 11;
 
         public DexGoogleSheetsOutput(IOptions<OutputOptions> config)
         {
@@ -36,10 +36,11 @@ namespace WalletAnalyzer
 
                 WriteScrapeInfo(sheet1.CreateRow(0), timeElapsed, nmRows);
                 WriteTokenInfo(sheet1.CreateRow(1), table.TokenName, tokenHash);
-                AddFormulaFilterSellersOnlyTable(sheet1.CreateRow(2).CreateCell(8), $"B$5:D", $"C$5:C", "Sell");
 
-                AddFormulaForLastSell(_indexFirstRowForDexTable, table.Rows, $"I$3:K", $"K$3:K", "D");
-                OutputDexTableRows(sheet1, _indexFirstRowForDexTable-1, 0, table.Rows);
+                AddFormulaForLastSell(_indexFirstRowForDexTable, table.Rows, $"P${_indexFirstRowForDexTable+1}:R", $"R${_indexFirstRowForDexTable+1}:R", "D");
+                
+                AddDexTableRows(sheet1, _indexFirstRowForDexTable-1, 0, table.Rows);
+                AddFormulaFilterSellersOnlyTable(sheet1.GetRow(_indexFirstRowForDexTable).CreateCell(15), $"B${_indexFirstRowForDexTable+1}:D", $"C${_indexFirstRowForDexTable+1}:C", "Sell");
 
                 CreateOutputFile(workbook, fullPath);
             }
@@ -108,7 +109,7 @@ namespace WalletAnalyzer
             workbook.Close();
         }
 
-        private void OutputDexTableRows(ISheet sheet, int initIndexForTableHeaderRow, int initColumnIndex, List<DexRowOutputDto> rows)
+        private void AddDexTableRows(ISheet sheet, int initIndexForTableHeaderRow, int initColumnIndex, List<DexRowOutputDto> rows)
         {
             var headerXlsxRow = sheet.CreateRow(initIndexForTableHeaderRow);
             headerXlsxRow.CreateCell(initColumnIndex).SetCellValue("TxnHash");
