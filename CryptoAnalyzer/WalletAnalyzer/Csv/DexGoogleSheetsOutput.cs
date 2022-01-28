@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using WebScraper;
+using WebScraper.WebScrapers.EtherscanDex;
 
 namespace WalletAnalyzer
 {
@@ -44,7 +45,7 @@ namespace WalletAnalyzer
                     sheet1.GetRow(_indexFirstRowForDexTable).CreateCell(15),
                     $"B${_indexFirstRowForDexTable+1}:D",
                     $"C${_indexFirstRowForDexTable+1}:C",
-                    "Sell");
+                    DexAction.Sell.ToString());
 
                 CreateOutputFile(workbook, fullPath);
             }
