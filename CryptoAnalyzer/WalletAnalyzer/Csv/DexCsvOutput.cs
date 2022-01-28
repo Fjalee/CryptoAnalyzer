@@ -10,6 +10,7 @@ using WebScraper.Parsers;
 
 namespace WalletAnalyzer
 {
+    //GoogleSpreadsheet Formulas doesnt work properly in csv
     public class DexCsvOutput : IDexOutput
     {
         private readonly OutputOptions _config;
