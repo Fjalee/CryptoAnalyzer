@@ -8,14 +8,14 @@ using WebScraper;
 
 namespace WalletAnalyzer
 {
-    public class DexGoogleSpreadsheetsOutput : IDexOutput
+    public class DexGoogleSheetsOutput : IDexOutput
     {
         private readonly OutputOptions _config;
         private ICellStyle _dateFormatStyle;
         private readonly string _dateFormatString = "dd/MM/yyyy HH:mm:ss";
         private readonly int _indexFirstRowForDexTable = 4;
 
-        public DexGoogleSpreadsheetsOutput(IOptions<OutputOptions> config)
+        public DexGoogleSheetsOutput(IOptions<OutputOptions> config)
         {
             _config = config.Value;
         }

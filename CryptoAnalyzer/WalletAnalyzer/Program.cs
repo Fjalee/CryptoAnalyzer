@@ -47,7 +47,7 @@ namespace WalletAnalyzer
                     config.GetSection("AppSettings").GetSection("Output"));
 
             services
-                .AddTransient<IDexOutput, DexGoogleSpreadsheetsOutput>()
+                .AddTransient<IDexOutput, DexGoogleSheetsOutput>()
                 .AddTransient<IParserCommon, ParserCommon>()
                 .AddTransient<IWebScraper, WebScraper.WebScraper>()
                 //.AddTransient<IWebScraper, MockWebScraper>()
