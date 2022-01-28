@@ -13,12 +13,14 @@ namespace WalletAnalyzer
     {
         private readonly OutputOptions _config;
         private ICellStyle _dateFormatStyle;
-        private readonly string _dateFormatString = "dd/MM/yyyy HH:mm:ss";
-        private readonly int _indexFirstRowForDexTable = 11;
+        private readonly string _dateFormatString;
+        private readonly int _indexFirstRowForDexTable;
 
         public DexGoogleSheetsOutput(IOptions<OutputOptions> config)
         {
             _config = config.Value;
+            _dateFormatString = _config.DateFormat;
+            _indexFirstRowForDexTable = _config.IndexFirstRowDexTable;
         }
 
         public void DoOutput(string outputName, string tokenHash, DexTableOutputDto table, string timeElapsed, int nmRows)
