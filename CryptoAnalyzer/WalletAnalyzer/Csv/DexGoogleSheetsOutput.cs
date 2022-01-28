@@ -40,7 +40,11 @@ namespace WalletAnalyzer
                 AddFormulaForLastSell(_indexFirstRowForDexTable, table.Rows, $"P${_indexFirstRowForDexTable+1}:R", $"R${_indexFirstRowForDexTable+1}:R", "D");
                 
                 AddDexTableRows(sheet1, _indexFirstRowForDexTable-1, 0, table.Rows);
-                AddFormulaFilterSellersOnlyTable(sheet1.GetRow(_indexFirstRowForDexTable).CreateCell(15), $"B${_indexFirstRowForDexTable+1}:D", $"C${_indexFirstRowForDexTable+1}:C", "Sell");
+                AddFormulaFilterSellersOnlyTable(
+                    sheet1.GetRow(_indexFirstRowForDexTable).CreateCell(15),
+                    $"B${_indexFirstRowForDexTable+1}:D",
+                    $"C${_indexFirstRowForDexTable+1}:C",
+                    "Sell");
 
                 CreateOutputFile(workbook, fullPath);
             }
